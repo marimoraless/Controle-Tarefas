@@ -1,0 +1,43 @@
+﻿
+@model List<Tarefa>
+
+
+<h2>Lista de Tarefas</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Adicionar</a>
+    <a asp-action="TarefaPorFazer" class="btn btn-primary">Tarefa Por Fazer</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>TarefaId</th>
+            <th>Nome da Tarefa</th>
+            <th>Data </th>
+            <th>Status da Tarefa</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tarefa in Model)
+        {
+            <tr>
+                <td>@tarefa.TarefaId</td>
+                <td>@tarefa.NomeTarefa</td>
+                <td>@tarefa.DataInicio</td>
+                <td>
+   
+                    <select asp-for="@tarefa.StatusTarefa" asp-items="Html.GetEnumSelectList<StatusTarefa>()">
+
+                    </select>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@tarefa.TarefaId" class="btn btn-primary">Editar</a> |
+                    <a asp-action="Detail" asp-route-id="@tarefa.TarefaId" class="btn btn-success">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@tarefa.TarefaId" class="btn btn-danger">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+﻿@model Tarefa
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Deletar Tarefa</h1>
+
+<hr />
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.NomeTarefa)
+    </dt>
+
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="TarefaId" />
+    <input type="submit" value="Delete" class="btn btn-danger" /> |
+    <a asp-action="Index" class="btn btn-primary">Voltar</a>
+</form>
+</div>
+    

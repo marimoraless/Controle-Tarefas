@@ -1,0 +1,14 @@
+﻿@model Tarefa
+
+<h2>Editar Tarefa</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="TarefaId" />
+    <div class="form-group">
+        <label asp-for="NomeTarefa" class="control-label"></label>
+        <input asp-for="NomeTarefa" class="form-control" />
+        <span asp-validation-for="NomeTarefa" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
