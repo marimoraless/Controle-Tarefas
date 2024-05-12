@@ -1,22 +1,18 @@
-﻿
-@model List<Tarefa>
-
-
-<h2>Lista de Tarefas</h2>
-
-<p>
-    <a asp-action="Create" class="btn btn-primary">Adicionar</a>
-    <a asp-action="TarefaPorFazer" class="btn btn-primary">Tarefa Por Fazer</a>
-</p>
-
+﻿<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="mb-4 text-center">LISTA DE TAREFAS </h2>
+        </div>
+    </div>
+</div>
 <table class="table">
     <thead>
         <tr>
-            <th>TarefaId</th>
+            <th>IdTarefa</th>
             <th>Nome da Tarefa</th>
-            <th>Data </th>
-            <th>Status da Tarefa</th>
-            <th></th>
+            <th>Data de Início</th>
+            <th>Data de Conclusão</th>
+            <th>Apagar Tarefa</th>
         </tr>
     </thead>
     <tbody>
@@ -26,18 +22,16 @@
                 <td>@tarefa.TarefaId</td>
                 <td>@tarefa.NomeTarefa</td>
                 <td>@tarefa.DataInicio</td>
+                <td>@tarefa.DataConclusao</td>
                 <td>
-   
-                    <select asp-for="@tarefa.StatusTarefa" asp-items="Html.GetEnumSelectList<StatusTarefa>()">
-
-                    </select>
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@tarefa.TarefaId" class="btn btn-primary">Editar</a> |
-                    <a asp-action="Detail" asp-route-id="@tarefa.TarefaId" class="btn btn-success">Detalhes</a> |
-                    <a asp-action="Delete" asp-route-id="@tarefa.TarefaId" class="btn btn-danger">Deletar</a>
+                <a asp-action="Delete" asp-route-id="@tarefa.TarefaId" class="btn btn-danger">Deletar</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+<div class="text-center">
+    <a href="/tarefa/TarefaAFazer" class="btn btn-primary"> TAREFAS PENDENTES</a> |
+    <a href="/tarefa/TarefaConcluida" class="btn btn-primary">TAREFAS CONCLUÍDAS</a>
+</div>

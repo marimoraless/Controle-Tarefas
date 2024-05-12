@@ -1,24 +1,17 @@
 ﻿using System;
-
+using System.ComponentModel.DataAnnotations;
+using SistemaControle.Models;
 namespace SistemaControle.Models
 {
     public class Tarefa
     {
         public int TarefaId { get; set; }
         public string? NomeTarefa { get; set; } = string.Empty;
-        public DateTime DataInicio { get; set; }
-
-        public string Descricao { get; set; }
-
-        public DateTime DataConclusao { get; set; } 
-        public string? StatusTarefa { get; set; }
-
-        public string? TarefaPorFazer { get; set; }
+        public DateOnly DataInicio { get; set; }
+        public DateOnly? DataConclusao { get; set; } 
+        public string? Observação { get; set; }
+        public string? StatusTarefa { get; set; } 
+        public string? TarefaAFazer { get; set; }
+        public bool Concluida { get; set; } 
     }
-
-    public enum StatusTarefa
-    {
-        Pendente,
-        Concluída
-    }
-}
+} 

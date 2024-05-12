@@ -1,8 +1,36 @@
-﻿@{
-    ViewData["Title"] = "Página Inicial";
-}
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
 
-<div class="text-center">
-    <img src="IMG/IMG1.png" class="img-fluid" />
+        .jumbotron {
+            background-color: #8FCCD3;
+            color: #fff;
+            padding: 20px;
+            border-radius: 0;
+        }
 
-</div>
+        .mb-4 {
+            margin-bottom: 40px;
+        }
+
+        .btn-lg {
+            margin-top: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <img src="IMG/IMG3.png" class="img-fluid mb-4">
+        <a href="/tarefa/TarefaAFazer" class="btn btn-warning btn-lg">REGISTRAR TAREFAS</a>
+    </div>
+
+</body>
+</html>

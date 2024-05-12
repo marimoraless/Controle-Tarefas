@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Tarefa\TarefaPorFazer.cshtml" />
+    <Content Remove="Views\Tarefa\TarefasConcluidas.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\IMG\" />
   </ItemGroup>
 

@@ -1,18 +1,38 @@
 ﻿@model Tarefa
 
-<h2>Adicionar Tarefa</h2>
 
-<form asp-action="Create" method="post">
-    <div class="form-group">
-        <label asp-for="NomeTarefa" class="control-label"></label>
-        <input asp-for="NomeTarefa" class="form-control" />
-        <span asp-validation-for="NomeTarefa" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="DataInicio" class="control-label"></label>
-        <input asp-for="DataInicio" type=" date" class="form-control" value="@DateTimeOffset.Now.ToString("yyyy-MM-dd")" />
-        <span asp-validation-for="DataInicio" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Adicionar</button>
-</form>
- 
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center mb-4">CRIAR TAREFA</h2>
+
+            <form asp-action="Create" method="post">
+                <div class="form-group">
+                    <label asp-for="NomeTarefa" class="control-label"> Nome da Tarefa:</label>
+                    <br>
+                    <input asp-for="NomeTarefa" class="form-control" />
+                    <span asp-validation-for="NomeTarefa" class="text-danger"></span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label asp-for="DataInicio" class="control-label">Data de Início:</label>
+                    <br>
+                    <input asp-for="DataInicio" type=" date" class="form-control" value="@DateTimeOffset.Now.ToString("dd-MM-yyyy")" />
+                    <span asp-validation-for="DataInicio" class="text-danger"></span>
+
+                </div>
+                <br>
+                <div class="form-group">
+                    <label asp-for="Observação" class="control-label">Observação:</label>
+                    <br>
+                    <input asp-for="Observação" class="form-control" />
+                    <span asp-validation-for="Observação" class="text-danger"></span>
+                </div>
+
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary mr-10">Salvar</button>
+                            <a asp-action="TarefaAFazer" class="btn btn-secondary ml-10">Cancelar</a>
+                        </div>
+                        </form>

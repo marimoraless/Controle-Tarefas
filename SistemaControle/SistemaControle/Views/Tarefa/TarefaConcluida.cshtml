@@ -1,0 +1,39 @@
+﻿@model List<Tarefa>;
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="mb-4 text-center">TAREFAS CONCLUÍDAS</h2>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID </th>
+                    <th>Tarefa</th>
+                    <th>Data de Início</th>
+                    <th>Data de Conclusão</th>
+                    <th>Status Tarefa</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var tarefa in Model)
+
+                {
+                    <tr>
+                        <td>@tarefa.TarefaId</td>
+                        <td>@tarefa.NomeTarefa</td>
+                        <td>@tarefa.DataInicio</td>
+                        <td>@tarefa.DataConclusao</td>
+                        <td>@tarefa.StatusTarefa Concluída</td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        <br>
+        <div class="text-center">
+            <a href="/tarefa/TarefaAFazer" class="btn btn-primary"> TAREFAS PENDENTES </a> |
+            <a href="/tarefa/Index" class="btn btn-primary"> LISTA TAREFAS </a>
+        </div>

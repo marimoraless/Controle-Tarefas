@@ -1,15 +1,33 @@
 ﻿@model Tarefa
 
-<h2>Detalhes da Tarefa</h2>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Tarefa</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center mb-4">DETALHES DA TAREFA </h2>
 
-Id: @Model.TarefaId
-<br />
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">ID: @Model.TarefaId</h5>
+                        <p class="card-text">Nome da Tarefa: @Model.NomeTarefa</p>
+                        <p class="card-text">Observação: @Model.Observação</p>
+                    </div>
+                </div>
 
-Nome Tarefa: @Model.NomeTarefa
-<br />
+                <div class="text-center mt-4">
+                    <a asp-action="TarefaAFazer" class="btn btn-primary">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        
-<div>
-    <a asp-action="Index" class="btn btn-primary">Voltar</a>
-</div>
-
+</body>
+</html>

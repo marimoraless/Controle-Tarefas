@@ -1,0 +1,41 @@
+﻿@model List<Tarefa>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="mb-4 text-center">TAREFAS PENDENTES</h2>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-12 text-center">
+            <a asp-action="Create" class="btn btn-warning btn"><i class="fas fa-plus"></i> CRIAR TAREFA</a>
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var tarefa in Model.Where(t => !t.Concluida))
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+
+                        <p class="card-text"><strong>IDTarefa:</strong> @tarefa.TarefaId</p>
+                        <p class="card-text"><strong>Tarefa:</strong> @tarefa.NomeTarefa</p>
+                        <p class="card-text"><strong>Data de Início:</strong> @tarefa.DataInicio</p>
+                        <p class="card-text"><strong>Status da Tarefa:</strong> @tarefa.StatusTarefa Em andamento</p>
+                        <div class="text-center">
+                            <a asp-action="Edit" asp-route-id="@tarefa.TarefaId" class="btn btn-success"><i class="far fa-check-circle"></i> Concluir</a>
+                            <a asp-action="Detail" asp-route-id="@tarefa.TarefaId" class="btn btn-secondary"><i class="far fa-eye"></i> Detalhes</a>
+                            <a asp-action="Delete" asp-route-id="@tarefa.TarefaId" class="btn btn-danger"><i class="far fa-trash-alt"></i> Deletar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <a href="/tarefa/TarefaConcluida" class="btn btn-primary"><i class="fas fa-check"></i> TAREFAS CONCLUÍDAS</a> |
+            <a href="/tarefa/Index" class="btn btn-primary"><i class="fas fa-arrow-left"></i> LISTA TAREFAS</a>
+        </div>
+    </div>
+</div>
